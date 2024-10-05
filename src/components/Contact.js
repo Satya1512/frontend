@@ -29,7 +29,7 @@ function Contact() {
         };
       
         try {
-          const response = await fetch(`${process.env.REACT_APP_API_URL}`, {
+          const response = await fetch('https://portfolio-backend-rtbn.onrender.com/api/contact', {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',
