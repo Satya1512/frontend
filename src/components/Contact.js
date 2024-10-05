@@ -29,7 +29,7 @@ function Contact() {
         };
       
         try {
-          const response = await fetch(`${process.env.REACT_APP_BACKEND_URL/api/contact}`, {
+          const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}`, {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',
