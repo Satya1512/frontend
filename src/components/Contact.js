@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './index.css';
 import fbIm from "./images/fb1.png";
 import instaIm from "./images/instagram.png";
-import twitIm from "./images/twitter.png";
+import linkd from "./images/linkedin.png";
 
 function Contact() {
     const [formData, setFormData] = useState({
@@ -118,7 +118,7 @@ function Contact() {
                 <div className="social-icons">
                     <a href="https://www.facebook.com/satyamanikanta.bogolu" className="icon"><img src={fbIm} alt="Facebook" /></a>
                     <a href="https://www.instagram.com/_satya_15/" className="icon"><img src={instaIm} alt="Instagram" /></a>
-                    <a href="#" className="icon"><img src={twitIm} alt="Twitter" /></a>
+                    <a href="https://www.linkedin.com/in/venkata-satya-manikanta/" className="icon"><img src={linkd} alt="Linkedin" /></a>
                 </div>
             </div>
         </div>
