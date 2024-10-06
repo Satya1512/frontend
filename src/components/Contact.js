@@ -109,28 +109,6 @@ function Contact() {
                     <p className="status-message">{status}</p>
                 </div>
             </div>
-
-            {/* Right Info Section */}
-            <div className="right-section">
-                <div className="info-box">
-                    <div className="info-item">
-                        <strong>CALL US</strong><br />
-                        1234567890<br />
-                        0437234567
-                    </div>
-                    <div className="info-item">
-                        <strong>LOCATION</strong><br />
-                        10-146, Indira Nagar, Bapulapadu<br />
-                        Andhra Pradesh, India<br /> Pin Code: 521105
-                    </div>
-                    <div className="info-item">
-                        <strong>BUSINESS HOURS</strong><br />
-                        Mon – Fri  10 am – 8 pm<br />
-                        Sat, Sun Closed
-                    </div>
-                </div>
-            </div>
-
             {/* Pink Section */}
             <div className="pink-section">
                 <div className="get-in-touch">GET IN TOUCH</div>
