@@ -114,51 +114,56 @@ h1{
 }
 .about-container {
   display: flex;
-  align-items: center;
+  align-items: stretch;
   justify-content: space-between;
-  padding-left: 3rem;
+  padding: 2rem;
+  height: 90vh;
   background: linear-gradient(140deg, black, gray);
 }
 
 .about-section {
   flex: 1;
-  padding-left: 2rem;
-  transition: background-color 0.3s ease;
-}
-.about-section:hover
-{
-  transform: scale(1.05);
-}
-.self-photo {
-  flex: 1;
-  display: flex;
-  justify-content: center;
+  padding-top: 6rem;
+  padding-left: 4rem;
 }
 
-.photo {
-  max-width: 100%;
-  height: 250px;
-  padding-top: 0px;
-  border-radius: 10px;
+.image-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
 }
-img{
+
+.self-photo {
+  width: 350px;
+  height: 350px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #ddd;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
   transition: background-color 0.3s ease;
 }
-img:hover{
+
+.self-photo:hover {
   transform: scale(1.05);
+  border: 2px solid orange;
 }
 
 .about-text {
   max-width: 700px;
   margin: 0;
   padding: 1.5rem;
-  background-color: rgba(0, 0, 0, 0.1);
   border-radius: 10px;
   text-align: center;
   background: linear-gradient(140deg, black, gray);
-  color: white
+  color: white;
+  transition: background-color 0.3s ease;
 }
 
+.about-text:hover {
+  transform: scale(1.05);
+  border: 2px solid orange;
+}
 .heading {
   font-size: 2.5rem;
   margin-bottom: 1rem;
@@ -176,6 +181,43 @@ img:hover{
   color: #7bff57;
   font-weight: bold;
 }
-.Titile{
-  padding-bottom:20px
+
+.Titile {
+  padding-bottom: 20px;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  .about-container {
+    flex-direction: column; /* Stack content vertically */
+    height: auto; /* Let the height adjust based on content */
+    padding: 1rem;
+    align-items: center;
+    text-align: center;
+  }
+
+  .about-section {
+    padding: 1rem;
+    padding-top: 2rem;
+    max-width: 100%; /* Full width on mobile */
+  }
+
+  .image-container {
+    margin-top: 1.5rem;
+    max-width: 100%;
+    justify-content: center;
+  }
+
+  .self-photo {
+    width: 250px; /* Smaller image size for mobile */
+    height: 250px;
+  }
+
+  .heading {
+    font-size: 2rem; /* Adjust heading size for mobile */
+  }
+
+  .paragraph {
+    font-size: 1rem; /* Adjust paragraph size for mobile */
+  }
 }
