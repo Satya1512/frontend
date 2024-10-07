@@ -8,6 +8,8 @@ const Nav = styled.nav`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding-right:15px;
+  font-size: 18px
 `;
 
 const Logo = styled.h1`
