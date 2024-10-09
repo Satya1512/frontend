@@ -1,5 +1,3 @@
-
-////////////////////////////////////////
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
@@ -20,8 +18,8 @@ const Logo = styled.h1`
   color: black;
   font-size: 24px;
   font-weight: bold;
-    padding-top:15px;
-  padding-bottom:15px;
+  padding-top: 15px;
+  padding-bottom: 15px;
 `;
 
 const NavLinks = styled.div`
@@ -36,25 +34,20 @@ const NavLinks = styled.div`
     }
   }
 
-  // Hide links on mobile
-  @media (max-width: 768px) {
+  @media (max-width: 430px) {
     position: absolute;
     top: 60px;
-    right: 0;
-    background-color: white;
-    width: 40%;
+    transform: ${({ open }) => (open ? 'translateX(-105%)' : 'translateX(150%)')};
+    width: 40%; /* Adjust as needed */
     height: 90vh;
+    background-color: white;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    transform: ${({ open }) => (open ? 'translateX(-105%)' : 'translateX(150%)')};
-    transition: transform 0.3s ease-in-out;
-  /* Additional padding for nav links on mobile */
-  .nav-links a {
-    padding: 10px 0; /* Add padding between links */
-  }
-      z-index: 10;
+    transition: right 0.3s ease-in-out;
+    z-index: 10;
+
     a {
       margin: 15px 0;
     }
@@ -66,6 +59,7 @@ const Hamburger = styled.div`
   display: none;
   flex-direction: column;
   cursor: pointer;
+
   span {
     height: 2px;
     width: 25px;
@@ -74,14 +68,13 @@ const Hamburger = styled.div`
     transition: all 0.3s ease;
   }
 
-  // Show hamburger icon on mobile
   @media (max-width: 768px) {
     display: flex;
   }
 `;
 
 const Header = () => {
-  const [open, setOpen] = useState(false); // State to manage the menu
+  const [open, setOpen] = useState(false);
 
   const toggleMenu = () => {
     setOpen(!open);
@@ -107,4 +100,3 @@ const Header = () => {
 };
 
 export default Header;
-
