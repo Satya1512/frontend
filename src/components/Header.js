@@ -43,12 +43,12 @@ const NavLinks = styled.div`
     right: 0;
     background-color: white;
     width: 40%;
-    height: 80vh;
+    height: 90vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    transform: ${({ open }) => (open ? 'translateX(0)' : 'translateX(100%)')};
+    transform: ${({ open }) => (open ? 'translateX(-105%)' : 'translateX(150%)')};
     transition: transform 0.3s ease-in-out;
   /* Additional padding for nav links on mobile */
   .nav-links a {
