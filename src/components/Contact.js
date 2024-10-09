@@ -38,7 +38,7 @@ function Contact() {
           });
       
           if (response.ok) {
-            console.log("Failed to send the message. Please try again.");
+            console.log('Your message has been sent successfully.');
             setStatus('Your message has been sent successfully.');
             setFormData({ name: '', email: '', message: '' });
         } else {
