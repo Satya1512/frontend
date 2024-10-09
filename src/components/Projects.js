@@ -98,6 +98,7 @@ const CloseButton = styled.button`
   margin-top: 1rem;
 `;
 
+
 const Projects = () => {
   const [selectedProject, setSelectedProject] = useState(null);
 
@@ -113,7 +114,10 @@ const Projects = () => {
     <div>
       <ProjectsSection>
         {projectsData.map((project) => (
-          <ProjectCard key={project.id} onClick={() => handleProjectClick(project)}>
+          <ProjectCard
+            key={project.id}
+            onClick={() => handleProjectClick(project)}
+          >
             <ProjectTitle>{project.name}</ProjectTitle>
           </ProjectCard>
         ))}
@@ -124,15 +128,25 @@ const Projects = () => {
           <ModalContent onClick={(e) => e.stopPropagation()}>
             <h3>{selectedProject.name}</h3>
             <p>{selectedProject.description}</p>
-            <p><strong>Technologies Used:</strong> {selectedProject.technologies}</p>
+            <p>
+              <strong>Technologies Used:</strong> {selectedProject.technologies}
+            </p>
             <div>
               {selectedProject.link && (
-                <a href={selectedProject.link} target="_blank" rel="noopener noreferrer">
+                <a
+                  href={selectedProject.link}
+                  target="_blank"
+                  rel="noopener noreferrer">
                   View Project
                 </a>
               )}
               {selectedProject.videoLink && (
-                <a href={selectedProject.videoLink} target="_blank" rel="noopener noreferrer" style={{ marginLeft: '1rem' }}>
+                <a
+                  href={selectedProject.videoLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{ marginLeft: "1rem" }}
+                >
                   Watch Video
                 </a>
               )}
