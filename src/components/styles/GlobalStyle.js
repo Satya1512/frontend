@@ -18,6 +18,18 @@ const GlobalStyles = createGlobalStyle`
   p {
     margin: 0 0 1rem 0;
   }
+  @media (max-width: 430px) {
+    /* Add styles for mobile screens here */
+    body {
+      font-size: 14px;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      font-size: 18px;
+    }
+    p {
+      font-size: 12px;
+    }
+  }
 `;
 
 export default GlobalStyles;
