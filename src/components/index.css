@@ -10,22 +10,23 @@
 
 .form-section {
   background-color: #c4c4c4;
-  padding: 30px;
+  padding: 20px;
   display: flex;
   justify-content: left;
   z-index: 1;
+  padding-left: 40px;
 
 }
 
 .form {
-  width: 500px;
+  width: 400px;
   
 }
 
 .submit-button {
-  background-color: #dd91b9;
+  background-color: white;
   color: rgb(0, 0, 0);
-  padding: 10px;
+  padding: 5px;
   border: none;
   border-radius: 50px;
   cursor: pointer;
@@ -33,6 +34,11 @@
   width: 100px;
   text-align: center;
   margin-top: 20px;
+}
+.submit-button:hover {
+  background-color: #dd91b9;
+  transform: scale(1.05);
+  font-size:18px ;
 }
 .info-box {
   display: flex;
@@ -46,12 +52,13 @@
 .pink-section {
   background-color: #dd91b9;
   color: white;
-  padding: 40px;
+  padding-left: 40px;
   margin-top: 0px;
   width: 100%;
   z-index: 0;
   text-align: left;
   height:400px;
+  padding-top:20px
 }
 
 .get-in-touch {

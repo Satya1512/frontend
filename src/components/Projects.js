@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
-import styled from 'styled-components';
-import projectsData from '../data/projectsData';
+import React, { useState } from "react";
+import styled from "styled-components";
+import projectsData from "../data/projectsData";
 
 // Section styling
 const ProjectsSection = styled.section`
@@ -11,7 +11,6 @@ const ProjectsSection = styled.section`
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 1.5rem;
   justify-items: center;
-
 
   /* For smaller screens */
   @media (max-width: 768px) {
@@ -35,7 +34,7 @@ const ProjectCard = styled.div`
   flex-direction: column;
   justify-content: space-between;
   cursor: pointer;
-  padding-top:90px;
+  padding-top: 90px;
   transition: transform 0.2s ease-in-out, box-shadow 0.3s ease-in-out;
 
   &:hover {
@@ -52,7 +51,7 @@ const ProjectCard = styled.div`
 
 const ProjectTitle = styled.h3`
   margin-bottom: 0.5rem;
-  color: #007BFF;
+  color: #007bff;
   padding-bottom: 10px;
 
   /* For smaller screens */
@@ -89,7 +88,7 @@ const ModalContent = styled.div`
 `;
 
 const CloseButton = styled.button`
-  background: #007BFF;
+  background: #007bff;
   color: white;
   border: none;
   padding: 0.5rem 1rem;
@@ -113,7 +112,10 @@ const Projects = () => {
     <div>
       <ProjectsSection>
         {projectsData.map((project) => (
-          <ProjectCard key={project.id} onClick={() => handleProjectClick(project)}>
+          <ProjectCard
+            key={project.id}
+            onClick={() => handleProjectClick(project)}
+          >
             <ProjectTitle>{project.name}</ProjectTitle>
           </ProjectCard>
         ))}
@@ -124,15 +126,26 @@ const Projects = () => {
           <ModalContent onClick={(e) => e.stopPropagation()}>
             <h3>{selectedProject.name}</h3>
             <p>{selectedProject.description}</p>
-            <p><strong>Technologies Used:</strong> {selectedProject.technologies}</p>
+            <p>
+              <strong>Technologies Used:</strong> {selectedProject.technologies}
+            </p>
             <div>
               {selectedProject.link && (
-                <a href={selectedProject.link} target="_blank" rel="noopener noreferrer">
+                <a
+                  href={selectedProject.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   View Project
                 </a>
               )}
               {selectedProject.videoLink && (
-                <a href={selectedProject.videoLink} target="_blank" rel="noopener noreferrer" style={{ marginLeft: '1rem' }}>
+                <a
+                  href={selectedProject.videoLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{ marginLeft: "1rem" }}
+                >
                   Watch Video
                 </a>
               )}
