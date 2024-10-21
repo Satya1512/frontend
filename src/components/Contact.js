@@ -133,10 +133,7 @@ function Contact() {
           <a href="https://www.instagram.com/_satya_15/" className="icon">
             <img src={instaIm} alt="Instagram" />
           </a>
-          <a
-            href="https://www.linkedin.com/in/venkata-satya-manikanta/"
-            className="icon"
-          >
+          <a href="https://www.linkedin.com/in/venkata-satya-manikanta/" className="icon">
             <img src={linkd} alt="Linkedin" />
           </a>
         </div>

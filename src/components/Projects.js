@@ -1,6 +1,6 @@
-import React, { useState } from "react";
-import styled from "styled-components";
-import projectsData from "../data/projectsData";
+import React, { useState } from 'react';
+import styled from 'styled-components';
+import projectsData from '../data/projectsData';
 
 // Section styling
 const ProjectsSection = styled.section`
@@ -13,7 +13,7 @@ const ProjectsSection = styled.section`
   justify-items: center;
 
   /* For smaller screens */
-  @media (max-width: 768px) {
+  @media (max-width: 430px) {
     grid-template-columns: 1fr; /* Stack the cards on smaller screens */
     padding-left: 1rem;
     padding-right: 1rem;
@@ -33,8 +33,7 @@ const ProjectCard = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  cursor: pointer;
-  padding-top: 90px;
+  position: relative;
   transition: transform 0.2s ease-in-out, box-shadow 0.3s ease-in-out;
 
   &:hover {
@@ -43,20 +42,39 @@ const ProjectCard = styled.div`
   }
 
   /* For smaller screens */
-  @media (max-width: 768px) {
+  @media (max-width: 430px) {
     width: 100%; /* Make cards full width on mobile */
-    height: auto; /* Adjust height for mobile */
+    height: auto; 
+  }
+`;
+
+// Button styling inside the card
+const ViewButton = styled.button`
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  background: #007BFF;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+
+  &:hover {
+    background: #0056b3;
   }
 `;
 
 const ProjectTitle = styled.h3`
+padding-top:60px;
+  text-align : center;
   margin-bottom: 0.5rem;
-  color: #007bff;
-  padding-bottom: 10px;
+  color: #007BFF;
 
   /* For smaller screens */
-  @media (max-width: 768px) {
-    font-size: 1.25rem;
+  @media (max-width: 430px) {
+    font-size: 1.75rem;
   }
 `;
 
@@ -72,6 +90,11 @@ const ModalOverlay = styled.div`
   justify-content: center;
   align-items: center;
   z-index: 1000;
+  font-size:18px;
+  @media (max-width: 430px) {
+    padding: 1rem;
+    font-size:16px;
+  }
 `;
 
 const ModalContent = styled.div`
@@ -80,15 +103,29 @@ const ModalContent = styled.div`
   border-radius: 8px;
   padding: 2rem;
   width: 500px;
-  max-width: 100%; /* Ensure it fits mobile screens */
-
-  @media (max-width: 768px) {
+  max-width: 100%;
+  @media (max-width: 430px) {
     padding: 1rem;
+`;
+const StyledH3 = styled.h3`
+  font-size: 24px; /* Default size */
+   padding:5px 0px;
+   font-wieght:bold;
+  @media (max-width: 430px) {
+    font-size: 20px; /* Adjust size for smaller screens */
+    font-wieght:bold;
+    padding:10px 0px;
   }
 `;
-
+const Styledp = styled.p`
+  font-size: 17px; /* Default size */
+   padding:5px 0px
+  @media (max-width: 430px) {
+    font-size: 15px; /* Adjust size for smaller screens */
+  }
+`;
 const CloseButton = styled.button`
-  background: #007bff;
+  background: #007BFF;
   color: white;
   border: none;
   padding: 0.5rem 1rem;
@@ -100,7 +137,7 @@ const CloseButton = styled.button`
 const Projects = () => {
   const [selectedProject, setSelectedProject] = useState(null);
 
-  const handleProjectClick = (project) => {
+  const handleViewClick = (project) => {
     setSelectedProject(project);
   };
 
@@ -112,11 +149,9 @@ const Projects = () => {
     <div>
       <ProjectsSection>
         {projectsData.map((project) => (
-          <ProjectCard
-            key={project.id}
-            onClick={() => handleProjectClick(project)}
-          >
+          <ProjectCard key={project.id}>
             <ProjectTitle>{project.name}</ProjectTitle>
+            <ViewButton onClick={() => handleViewClick(project)}>View</ViewButton>
           </ProjectCard>
         ))}
       </ProjectsSection>
@@ -124,18 +159,17 @@ const Projects = () => {
       {selectedProject && (
         <ModalOverlay onClick={closeModal}>
           <ModalContent onClick={(e) => e.stopPropagation()}>
-            <h3>{selectedProject.name}</h3>
-            <p>{selectedProject.description}</p>
-            <p>
+            <StyledH3><strong>{selectedProject.name}:</strong></StyledH3>
+            <Styledp>{selectedProject.description}</Styledp>
+            <Styledp>
               <strong>Technologies Used:</strong> {selectedProject.technologies}
-            </p>
+            </Styledp>
             <div>
               {selectedProject.link && (
                 <a
                   href={selectedProject.link}
                   target="_blank"
-                  rel="noopener noreferrer"
-                >
+                  rel="noopener noreferrer">
                   View Project
                 </a>
               )}

@@ -5,6 +5,7 @@ import Footer from "./components/Footer";
 import Home from "./components/Home";
 import About from "./components/About";
 import Projects from "./components/Projects";
+import Certifications from './components/Certifications';
 import Contact from "./components/Contact";
 import GlobalStyles from "./components/styles/GlobalStyle";
 import Resume from "./components/Resume";
@@ -12,14 +13,16 @@ import Resume from "./components/Resume";
 function App() {
   return (
     <Router>
-      <GlobalStyles />
+      <GlobalStyles/>
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/resume" element={<Resume />} />
+        <Route path="/certifications" element={<Certifications />} />
         <Route path="/projects" element={<Projects />} />
         <Route path="/contact" element={<Contact />} />
+        
       </Routes>
       <Footer />
     </Router>
