@@ -53,7 +53,7 @@ function Contact() {
             {/* Form Section */}
             <div className="form-section">
                 <div className="form">
-                    <h1>Contact Us</h1>
+                    <h1>Contact Me</h1>
                     <form onSubmit={handleSubmit}>
                         {/* Name Input */}
                         <div className="mb-3">
@@ -97,7 +97,7 @@ function Contact() {
                                     onChange={handleChange}
                                     required
                                 ></textarea>
-                                <label htmlFor="floatingTextarea">Comments</label>
+                                <label htmlFor="floatingTextarea">Message</label>
                             </div>
                         </div>
                         {/* Submit Button */}
