@@ -246,6 +246,8 @@ h1{
     top: 50px; /* Adjust vertical position */
     background-color: white; /* Background for dropdown */
     width: 200px; /* Width of the dropdown */
+
+    z-index: 100; /* Ensure dropdown is above other content */
   }
 
   .nav-links.active {
@@ -257,8 +259,6 @@ h1{
     justify-content: center; /* Center items horizontally */
     flex-direction: row; /* Default row direction for icons */
   }
-  
-}
 .certifications {
   padding: 20px;
 }
@@ -291,5 +291,5 @@ h1{
   color: white;
   padding: 20px;
   z-index: 1000;
-  overflow: auto;
+  overflow: auto;}
 }

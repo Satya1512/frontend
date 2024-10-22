@@ -27,8 +27,8 @@ const CertificationCard = styled.div`
   background: linear-gradient(140deg, black, gray);
   color: white;
   text-align: left;
-  width: 300px;
-  height: 300px;
+  width: 270px;
+  height: 270px;
   display: flex;
   flex-direction: column;
   justify-content: center; // Center content vertically
@@ -110,31 +110,32 @@ const CloseButton = styled.button`
   margin-top: 1rem;
   margin-right: 1rem; // Space between buttons
 `;
-
-const DownloadButton = styled.button`
-  background: #28a745; // Green background
+const ViewButton = styled.button`
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  background: #007BFF;
   color: white;
   border: none;
   padding: 0.5rem 1rem;
   border-radius: 5px;
   cursor: pointer;
-  margin-top: 1rem;
-  margin-left:14rem // Align with close button
-  @media (max-width: 430px) {
-     margin-left:8rem
+  font-size: 1rem;
+
+  &:hover {
+    background: #0056b3;
   }
 `;
 
 const Certifications = () => {
   const [selectedImage, setSelectedImage] = useState(null);
 
-  const closeModal = () => {
-    setSelectedImage(null);
+  const handleViewClick = (certPdfUrl) => {
+    setSelectedImage(certPdfUrl); // Corrected to use certPdfUrl
   };
 
-  const handleCardClick = (imageUrl) => {
-    console.log("Card clicked! Image URL:", imageUrl); // Debugging output
-    setSelectedImage(imageUrl);
+  const closeModal = () => {
+    setSelectedImage(null);
   };
 
   const handleDownload = (url) => {
@@ -150,8 +151,9 @@ const Certifications = () => {
     <div>
       <CertificationsSection>
         {certificationsData.map((cert) => (
-          <CertificationCard key={cert.id} onClick={() => handleCardClick(cert.pdfUrl)}>
+          <CertificationCard key={cert.id}>
             <CertificationTitle>{cert.title}</CertificationTitle>
+            <ViewButton onClick={() => handleViewClick(cert.pdfUrl)}>View</ViewButton>
           </CertificationCard>
         ))}
       </CertificationsSection>
@@ -162,7 +164,6 @@ const Certifications = () => {
             <StyledH3>Image Preview</StyledH3>
             <img src={selectedImage} alt="Preview" style={{ width: '100%', height: 'auto' }} />
             <CloseButton onClick={closeModal}>Close</CloseButton>
-            <DownloadButton onClick={() => handleDownload(selectedImage)}>Download</DownloadButton>
           </ModalContent>
         </ModalOverlay>
       )}

@@ -67,8 +67,8 @@ const ViewButton = styled.button`
 `;
 
 const ProjectTitle = styled.h3`
-padding-top:60px;
-  text-align : center;
+  padding-top: 60px;
+  text-align: center;
   margin-bottom: 0.5rem;
   color: #007BFF;
 
@@ -90,10 +90,11 @@ const ModalOverlay = styled.div`
   justify-content: center;
   align-items: center;
   z-index: 1000;
-  font-size:18px;
+  font-size: 18px;
+
   @media (max-width: 430px) {
     padding: 1rem;
-    font-size:16px;
+    font-size: 16px;
   }
 `;
 
@@ -104,26 +105,32 @@ const ModalContent = styled.div`
   padding: 2rem;
   width: 500px;
   max-width: 100%;
+
   @media (max-width: 430px) {
     padding: 1rem;
+  }
 `;
+
 const StyledH3 = styled.h3`
-  font-size: 24px; /* Default size */
-   padding:5px 0px;
-   font-wieght:bold;
+  font-size: 24px;
+  padding: 5px 0px;
+  font-weight: bold;
+
   @media (max-width: 430px) {
-    font-size: 20px; /* Adjust size for smaller screens */
-    font-wieght:bold;
-    padding:10px 0px;
+    font-size: 20px;
+    padding: 10px 0px;
   }
 `;
+
 const Styledp = styled.p`
-  font-size: 17px; /* Default size */
-   padding:5px 0px
+  font-size: 17px;
+  padding: 5px 0px;
+
   @media (max-width: 430px) {
-    font-size: 15px; /* Adjust size for smaller screens */
+    font-size: 15px;
   }
 `;
+
 const CloseButton = styled.button`
   background: #007BFF;
   color: white;
@@ -132,6 +139,10 @@ const CloseButton = styled.button`
   border-radius: 5px;
   cursor: pointer;
   margin-top: 1rem;
+
+  &:hover {
+    background: #0056b3;
+  }
 `;
 
 const Projects = () => {
@@ -159,7 +170,7 @@ const Projects = () => {
       {selectedProject && (
         <ModalOverlay onClick={closeModal}>
           <ModalContent onClick={(e) => e.stopPropagation()}>
-            <StyledH3><strong>{selectedProject.name}:</strong></StyledH3>
+            <StyledH3>{selectedProject.name}</StyledH3>
             <Styledp>{selectedProject.description}</Styledp>
             <Styledp>
               <strong>Technologies Used:</strong> {selectedProject.technologies}
@@ -169,7 +180,8 @@ const Projects = () => {
                 <a
                   href={selectedProject.link}
                   target="_blank"
-                  rel="noopener noreferrer">
+                  rel="noopener noreferrer"
+                >
                   View Project
                 </a>
               )}
@@ -178,7 +190,7 @@ const Projects = () => {
                   href={selectedProject.videoLink}
                   target="_blank"
                   rel="noopener noreferrer"
-                  style={{ marginLeft: "1rem" }}
+                  style={{ marginLeft: '1rem' }}
                 >
                   Watch Video
                 </a>
