@@ -53,7 +53,7 @@ function Contact() {
             {/* Form Section */}
             <div className="form-section">
                 <div className="form">
-                    <h1>Contact Us</h1>
+                    <h1>Contact Me</h1>
                     <form onSubmit={handleSubmit}>
                         {/* Name Input */}
                         <div className="mb-3">
@@ -97,7 +97,7 @@ function Contact() {
                                     onChange={handleChange}
                                     required
                                 ></textarea>
-                                <label htmlFor="floatingTextarea">Comments</label>
+                                <label htmlFor="floatingTextarea">Message</label>
                             </div>
                         </div>
                         {/* Submit Button */}
@@ -113,7 +113,7 @@ function Contact() {
             <div className="pink-section">
                 <div className="get-in-touch">GET IN TOUCH</div>
                 <p className="sub-text">
-                    Hey! We are looking forward to starting a project with you!
+                    Hey! I am looking forward to starting a project with you!
                 </p>
                 <div className="social-icons">
                     <a href="https://www.facebook.com/satyamanikanta.bogolu" className="icon"><img src={fbIm} alt="Facebook" /></a>
