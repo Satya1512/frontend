@@ -46,10 +46,12 @@ function Contact() {
             console.error('Error:', error);
             setFormData({ name: '', email: '', message: '' });
         }
+          setTimeout(() => setStatus(''), 5000);
     } catch (error) {
         console.error('Error:', error);
         setStatus('An error occurred. Please try again later.');
         setFormData({ name: '', email: '', message: '' });
+        setTimeout(() => setStatus(''), 5000);
     }
 };   
     return (
