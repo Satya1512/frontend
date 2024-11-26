@@ -39,13 +39,19 @@ function Contact() {
       
           if (response.ok) {
             setStatus('Your message has been sent successfully.');
+            console.log('Your message has been sent successfully.');
             setFormData({ name: '', email: '', message: '' });
         } else {
             setStatus('Failed to send the message. Please try again.');
+            console.log('Failed to send the message. Please try again.');
+            setFormData({ name: '', email: '', message: '' });
         }
+          setTimeout(() => setStatus(''), 5000);
     } catch (error) {
         console.error('Error:', error);
         setStatus('An error occurred. Please try again later.');
+        setFormData({ name: '', email: '', message: '' });
+        setTimeout(() => setStatus(''), 5000);
     }
 };   
     return (
